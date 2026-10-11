@@ -44,9 +44,9 @@ class GroundedAnswer:
         else:
             for reference in self.references:
                 lines.append(
-                    f"- [{reference.chunk_id}] {reference.chapter_title} — {reference.source}"
+                    f"- [{reference.chunk_id}] {reference.chapter_title} - {reference.source}"
                 )
-                lines.append(f'  Evidence excerpt: “{reference.excerpt}”')
+                lines.append(f'  Evidence excerpt: "{reference.excerpt}"')
         return "\n".join(lines)
 
 
@@ -95,7 +95,7 @@ def build_grounded_answer(
         excerpt=best.chunk.text,
     )
     return GroundedAnswer(
-        answer=f"Evidence excerpt from the book: “{reference.excerpt}” [{reference.chunk_id}]",
+        answer=f'Evidence excerpt from the book: "{reference.excerpt}" [{reference.chunk_id}]',
         references=(reference,),
         retrieved=retrieved,
         refused=False,
