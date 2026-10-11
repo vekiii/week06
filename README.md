@@ -25,3 +25,5 @@ python -m src.cli --question "When is it safer to be feared than loved?" --show-
 `--show-context` ispisuje pronađene chunk-ove; `--show-scores` prikazuje i skorove. Izlaz uključuje konfiguraciju radi ponovljivosti.
 
 Testovi se pokreću komandom `python -m pytest -q`.
+
+Evaluacioni skup od tri podržana i dva nepodržana pitanja pokreće se komandom `python -m src.evaluation`; detaljni ishodi su u `docs/phase-7-evaluation.md`.
