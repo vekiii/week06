@@ -1,0 +1,7 @@
+Configuration: chunk_size=140, overlap=30, top_k=3, min_score=0.50
+PASS supported-feared-or-loved: refused=False; top=prince-section-018-chunk-022 (CHAPTER XVII., 1.00); citations=prince-section-018-chunk-022
+PASS supported-keeping-faith: refused=False; top=prince-section-019-chunk-003 (CHAPTER XVIII.[1], 1.00); citations=prince-section-019-chunk-003
+PASS supported-fox-and-lion: refused=False; top=prince-section-020-chunk-120 (CHAPTER XIX., 0.75); citations=prince-section-020-chunk-120
+PASS unsupported-world-cup: refused=True; top=prince-section-001-chunk-083 (INTRODUCTION, 0.25); citations=none
+PASS unsupported-current-population: refused=True; top=prince-section-001-chunk-059 (INTRODUCTION, 0.33); citations=none
+Evaluation: 5/5 passed

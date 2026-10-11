@@ -1,0 +1,33 @@
+[
+  {
+    "id": "supported-feared-or-loved",
+    "question": "When is it safer to be feared than loved?",
+    "supported": true,
+    "expected_chapter_prefix": "CHAPTER XVII.",
+    "evidence_terms": ["safer", "feared", "loved"]
+  },
+  {
+    "id": "supported-keeping-faith",
+    "question": "How should a prince keep faith?",
+    "supported": true,
+    "expected_chapter_prefix": "CHAPTER XVIII.",
+    "evidence_terms": ["keep faith", "integrity"]
+  },
+  {
+    "id": "supported-fox-and-lion",
+    "question": "What two natures should a prince imitate?",
+    "supported": true,
+    "expected_chapter_prefix": "CHAPTER XIX.",
+    "evidence_terms": ["fox", "lion", "imitate"]
+  },
+  {
+    "id": "unsupported-world-cup",
+    "question": "Who won the World Cup in 1958?",
+    "supported": false
+  },
+  {
+    "id": "unsupported-current-population",
+    "question": "What is the current population of Rome?",
+    "supported": false
+  }
+]

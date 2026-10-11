@@ -1,0 +1,20 @@
+Corpus: the-prince (data\book.txt)
+Question: Who won the World Cup in 1958?
+Configuration: chunk_size=140 chars, overlap=30 chars, top_k=3, min_score=0.50
+
+Answer:
+I do not have enough evidence in the retrieved book passages to answer this question.
+Reason: Best lexical score 0.25 is below the configured minimum 0.50.
+References:
+None (no citation is made).
+
+Retrieved context:
+- [prince-section-001-chunk-083] INTRODUCTION
+  score=0.250
+  , when Venice lost in one day all that she had won in eight hundred years. Florence had a difficult part to play during these events, compli
+- [prince-section-001-chunk-150] INTRODUCTION
+  score=0.250
+  ssance among the nations of Europe. Whilst it is idle to protest against the world-wide and evil signification of his name, it may be pointe
+- [prince-section-004-chunk-019] CHAPTER III.
+  score=0.250
+  surrections on the borders; but to cause him to lose it a second time it was necessary to bring the whole world against him, and that his ar

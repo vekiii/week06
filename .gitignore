@@ -1,5 +1,6 @@
 /Week 6 RAG Homework Starter.pdf
-/data
+/data/*
+!/data/evaluation.json
 /rag-week-6-homework-starter__pycache__/
 .pytest_cache/
 *.py[cod]

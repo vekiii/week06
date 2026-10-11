@@ -1,0 +1,17 @@
+Corpus: the-prince (data\book.txt)
+Question: When is it safer to be feared than loved?
+Configuration: chunk_size=140 chars, overlap=30 chars, top_k=2, min_score=0.50
+
+Answer:
+Evidence excerpt from the book: "em in one person, it is much safer to be feared than loved, when, of the two, either must be dispensed with. Because this is to be asserted" [prince-section-018-chunk-022]
+References:
+- [prince-section-018-chunk-022] CHAPTER XVII. - https://www.gutenberg.org/ebooks/1232
+  Evidence excerpt: "em in one person, it is much safer to be feared than loved, when, of the two, either must be dispensed with. Because this is to be asserted"
+
+Retrieved context:
+- [prince-section-018-chunk-022] CHAPTER XVII.
+  score=1.000
+  em in one person, it is much safer to be feared than loved, when, of the two, either must be dispensed with. Because this is to be asserted
+- [prince-section-018-chunk-000] CHAPTER XVII.
+  score=0.667
+  CONCERNING CRUELTY AND CLEMENCY, AND WHETHER IT IS BETTER TO BE LOVED THAN FEARED
