@@ -1,0 +1,125 @@
+{
+  "question": "When is it safer to be feared than loved?",
+  "corpus": "data/book.txt",
+  "corpus_sha256": "33496a305f7a4b933784fb5aec95f920fbc3d4687794817e4cc444aa6578d2e4",
+  "top_k": 3,
+  "min_score": 0.5,
+  "runs": [
+    {
+      "chunk_size": 140,
+      "overlap": 30,
+      "command_args": [
+        "python",
+        "-m",
+        "src.cli",
+        "--corpus",
+        "the-prince",
+        "--corpus-path",
+        "data/book.txt",
+        "--question",
+        "When is it safer to be feared than loved?",
+        "--chunk-size",
+        "140",
+        "--overlap",
+        "30",
+        "--top-k",
+        "3",
+        "--min-score",
+        "0.5",
+        "--show-scores"
+      ],
+      "total_chunks": 2703,
+      "retrieved_count": 3,
+      "exact_duplicate_count": 0,
+      "refused": false,
+      "citations": [
+        "prince-section-018-chunk-022"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "prince-section-018-chunk-022",
+          "chapter_title": "CHAPTER XVII.",
+          "chunk_index": 22,
+          "score": 1.0,
+          "text": "em in one person, it is much safer to be feared than loved, when, of the two, either must be dispensed with. Because this is to be asserted",
+          "characters": 139
+        },
+        {
+          "chunk_id": "prince-section-018-chunk-000",
+          "chapter_title": "CHAPTER XVII.",
+          "chunk_index": 0,
+          "score": 0.6666666666666666,
+          "text": "CONCERNING CRUELTY AND CLEMENCY, AND WHETHER IT IS BETTER TO BE LOVED THAN FEARED",
+          "characters": 81
+        },
+        {
+          "chunk_id": "prince-section-018-chunk-001",
+          "chapter_title": "CHAPTER XVII.",
+          "chunk_index": 1,
+          "score": 0.6666666666666666,
+          "text": "BETTER TO BE LOVED THAN FEARED\n\nComing now to the other qualities mentioned above, I say that every prince ought to desire to be considered",
+          "characters": 139
+        }
+      ],
+      "rank_2_3_suffix_prefix_overlap_characters": 30
+    },
+    {
+      "chunk_size": 500,
+      "overlap": 80,
+      "command_args": [
+        "python",
+        "-m",
+        "src.cli",
+        "--corpus",
+        "the-prince",
+        "--corpus-path",
+        "data/book.txt",
+        "--question",
+        "When is it safer to be feared than loved?",
+        "--chunk-size",
+        "500",
+        "--overlap",
+        "80",
+        "--top-k",
+        "3",
+        "--min-score",
+        "0.5",
+        "--show-scores"
+      ],
+      "total_chunks": 804,
+      "retrieved_count": 3,
+      "exact_duplicate_count": 0,
+      "refused": false,
+      "citations": [
+        "prince-section-018-chunk-007"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "prince-section-018-chunk-007",
+          "chapter_title": "CHAPTER XVII.",
+          "chunk_index": 7,
+          "score": 1.0,
+          "text": "ith all my pow’rs, And guard with these severities my shores.\n\nChristopher Pitt.\n\nUpon this a question arises: whether it be better to be loved than feared or feared than loved? It may be answered that one should wish to be both, but, because it is difficult to unite them in one person, it is much safer to be feared than loved, when, of the two, either must be dispensed with. Because this is to be asserted in general of men, that they are ungrateful, fickle, false, cowardly, covetous, and as lon",
+          "characters": 500
+        },
+        {
+          "chunk_id": "prince-section-018-chunk-000",
+          "chapter_title": "CHAPTER XVII.",
+          "chunk_index": 0,
+          "score": 0.6666666666666666,
+          "text": "CONCERNING CRUELTY AND CLEMENCY, AND WHETHER IT IS BETTER TO BE LOVED THAN FEARED",
+          "characters": 81
+        },
+        {
+          "chunk_id": "prince-section-018-chunk-001",
+          "chapter_title": "CHAPTER XVII.",
+          "chunk_index": 1,
+          "score": 0.6666666666666666,
+          "text": "ONCERNING CRUELTY AND CLEMENCY, AND WHETHER IT IS BETTER TO BE LOVED THAN FEARED\n\nComing now to the other qualities mentioned above, I say that every prince ought to desire to be considered clement and not cruel. Nevertheless he ought to take care not to misuse this clemency. Cesare Borgia was considered cruel; notwithstanding, his cruelty reconciled the Romagna, unified it, and restored it to peace and loyalty. And if this be rightly considered, he will be seen to have been much more merciful t",
+          "characters": 500
+        }
+      ],
+      "rank_2_3_suffix_prefix_overlap_characters": 80
+    }
+  ]
+}

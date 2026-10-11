@@ -27,3 +27,5 @@ python -m src.cli --question "When is it safer to be feared than loved?" --show-
 Testovi se pokreću komandom `python -m pytest -q`.
 
 Evaluacioni skup od tri podržana i dva nepodržana pitanja pokreće se komandom `python -m src.evaluation`; detaljni ishodi su u `docs/phase-7-evaluation.md`.
+
+Poređenje chunking konfiguracija `140/30` i `500/80`, izabrani upit i komande nalaze se u [Phase 8 eksperimentu](docs/phase-8-chunking-experiment.md). Kompletni izlazi i rezultati sačuvani su u `docs/experiments/phase-8/`.
