@@ -75,4 +75,8 @@ Zadrzan je isti upit i konfiguracija (`140/30`). Svako vece `k` vraca isti rangi
 
 `k=5` vraca prva pet rezultata, `k=7` prvih sedam, a `k=10` svih deset prikazanih. Od cetvrtog rezultata skor je 0.500, ali neki pogoci su samo delimicna leksicka poklapanja ili dolaze iz drugog konteksta. Povecan `k` daje veci izbor dokaza, uz vise nebitnog konteksta; naredna RAG faza treba da odabere i citira samo ono sto stvarno podrzava odgovor.
 
+Konkretno, rezultati 4-5 sadrze reci `better`/`loved` u uvodu i poglavlju II, ali ne odgovaraju direktno na pitanje o izboru izmedju ljubavi i straha. Rezultat 6 pominje `better` i `prince` u drugoj temi. Rezultat 7 je ponovo iz XVII poglavlja i daje direktnu tvrdnju da je sigurnije biti feared than loved. Rezultat 8 nastavlja istu raspravu o ljubavi i strahu. Rezultati 9-10 su delimicni pogodci u poglavljima XIX i XXVI, bez odgovarajuceg fokusa na pitanje.
+
+Zato je u ovom primeru `k=3` vec dohvatio najdirektniji odlomak, dok `k=5` ukljucuje dva slabija pogotka; `k=7` dodaje jos jedan relevantan odlomak iz istog poglavlja, a `k=10` siri kontekst sa nekoliko slabih pogodaka. Ovo je primer zasto broj rezultata sam po sebi ne garantuje kvalitet evidence.
+
 Testirana je podrska za `k` vrednosti `2`, `3`, `5`, `7` i `10`, kao i da su rezultati stabilan prefiks bez obzira na broj trazenih rezultata.
