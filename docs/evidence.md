@@ -171,11 +171,11 @@ Rezultat: **9 passed**, [sačuvani izlaz](submission/starter-tests.txt). Opcije 
 | Član | Ime | Stvarni rad/pregled i konkretni fajlovi |
 |---|---|---|
 | A | Veki | Implementacija iz commitova `4036b4c`–`525d898`: Gutenberg loader i chunking (`src/corpus.py`, `src/chunking.py`), retrieval (`src/retrieval.py`), grounded odgovor i CLI (`src/rag.py`, `src/cli.py`), evaluacija (`src/evaluation.py`), testovi, chunking eksperiment i evidence dokumentacija. |
-| B | Koleginica (ime dopuniti) | Detaljno testiranje projekta i popravljanje grešaka ukoliko se pronađu. Zabeležiti konkretne testove/popravljene greške nakon zajedničkog pregleda. |
+| B | Kolega (ime dopuniti) | Detaljno testiranje projekta i popravljanje grešaka ukoliko se pronađu. Zabeležiti konkretne testove/popravljene greške nakon zajedničkog pregleda. |
 
 **Demo lead:**
 
-**Napomena:** dopuniti ime koleginice i dogovoreni demo lead pre predaje.
+**Napomena:** dopuniti ime kolege i dogovoreni demo lead pre predaje.
 
 ## Demo
 
