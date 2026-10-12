@@ -3,5 +3,6 @@
 !/data/evaluation.json
 /rag-week-6-homework-starter__pycache__/
 .pytest_cache/
+/.pytest-tmp-*/
 *.py[cod]
 .venv/

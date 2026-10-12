@@ -147,7 +147,16 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m src.evaluation
 ```
 
-Na macOS/Linux-u koristiti `.venv/bin/python`. Završna provera: **37 passed**, evaluacija **5/5 passed**. Sačuvani izlazi: [testovi](submission/tests.txt) i [evaluacija](submission/evaluation.txt). Evaluacioni slučajevi su u `data/evaluation.json` i proveravaju očekivano poglavlje i termine u citiranom odlomku, odnosno refusal bez referenci.
+Na macOS/Linux-u koristiti `.venv/bin/python`. Završna provera: **37 passed**; evaluacija **5/5 passed**. Sačuvani izlazi: [testovi](submission/tests.txt) i [evaluacija](submission/evaluation.txt). Evaluacioni slučajevi su u `data/evaluation.json` i proveravaju očekivano poglavlje i termine u citiranom odlomku, odnosno refusal bez referenci.
+
+**Ručna provera korisnika na Windows-u (2026-10-12):** `37 passed in 0.61s`. Prvi pokušaj testa imao je greške pri pravljenju `tmp_path`, jer Windows nije dozvolio pristup pytest podrazumevanom direktorijumu pod `%TEMP%`. Pokretanje sa jedinstvenim `--basetemp` unutar projekta zaobišlo je problem:
+
+```powershell
+$pytestTemp = Join-Path (Get-Location) ".pytest-tmp-$([guid]::NewGuid().ToString('N'))"
+.\.venv\Scripts\python.exe -m pytest -q --basetemp $pytestTemp -p no:cacheprovider
+```
+
+`-p no:cacheprovider` isključuje pytest cache, a nasumično ime pravi privremeni direktorijum za taj test run. Dodat je u `.gitignore` obrazac `/\.pytest-tmp-*/` da se ti lokalni direktorijumi ne dodaju u Git.
 
 Starter se proverava zasebno, iz njegovog direktorijuma, uz isti interpreter koji ima pytest:
 
