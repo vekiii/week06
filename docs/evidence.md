@@ -166,18 +166,16 @@ python -m pytest -q -o pythonpath= --import-mode=importlib tests
 
 Rezultat: **9 passed**, [sačuvani izlaz](submission/starter-tests.txt). Opcije sprečavaju da root `pytest.ini` ubaci novu aplikaciju `src` umesto starter paketa. Prvi pokušaj bez ovih opcija imao je dve import greške; to je sukob konfiguracije, ne pad testova starter logike. Istorijsko početno stanje ostaje u [Phase 1 beleškama](phase-1-baseline.md).
 
-## Doprinos para — dopuniti naknadno
-
-Prema dogovoru, ova sekcija ostaje prazna do potvrde stvarnih doprinosa. Predlog podele iz plana nije evidentiran kao obavljen rad.
+## Doprinos para
 
 | Član | Ime | Stvarni rad/pregled i konkretni fajlovi |
 |---|---|---|
-| A | | |
-| B | | |
+| A | Veki | Implementacija iz commitova `4036b4c`–`525d898`: Gutenberg loader i chunking (`src/corpus.py`, `src/chunking.py`), retrieval (`src/retrieval.py`), grounded odgovor i CLI (`src/rag.py`, `src/cli.py`), evaluacija (`src/evaluation.py`), testovi, chunking eksperiment i evidence dokumentacija. |
+| B | Koleginica (ime dopuniti) | Detaljno testiranje projekta i popravljanje grešaka ukoliko se pronađu. Zabeležiti konkretne testove/popravljene greške nakon zajedničkog pregleda. |
 
 **Demo lead:**
 
-**Napomena:** dopuniti imena, doprinose i demo lead pre predaje.
+**Napomena:** dopuniti ime koleginice i dogovoreni demo lead pre predaje.
 
 ## Demo
 
