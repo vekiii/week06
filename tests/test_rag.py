@@ -71,6 +71,41 @@ def test_min_score_is_validated() -> None:
             build_grounded_answer("prince counsel", [chunk], min_score=score)
 
 
+@pytest.mark.parametrize(
+    ("min_score", "expected_refusal"),
+    [(0.5, False), (0.5001, True)],
+)
+def test_answer_threshold_includes_exact_minimum(
+    min_score: float, expected_refusal: bool
+) -> None:
+    chunk = make_chunk("c1", "Virtue guides a prince.")
+
+    result = build_grounded_answer("virtue fortune", [chunk], min_score=min_score)
+
+    assert result.retrieved[0].score == pytest.approx(0.5)
+    assert result.refused is expected_refusal
+    if expected_refusal:
+        assert result.references == ()
+        assert result.citations == ()
+        assert result.refusal_reason is not None
+    else:
+        assert result.citations == (chunk.chunk_id,)
+        assert result.references[0].excerpt == chunk.text
+        assert result.refusal_reason is None
+
+
+@pytest.mark.parametrize("question", ["", " \t\n ", "the and of"])
+def test_empty_content_questions_refuse_even_with_zero_minimum(question: str) -> None:
+    chunk = make_chunk("c1", "Virtue and fortune guide a prince.")
+
+    result = build_grounded_answer(question, [chunk], min_score=0.0)
+
+    assert result.refused is True
+    assert result.retrieved == ()
+    assert result.references == ()
+    assert result.citations == ()
+
+
 def test_real_book_supported_and_unsupported_examples_calibrate_default_threshold() -> None:
     project_root = Path(__file__).resolve().parents[1]
     book = load_book(project_root / "data" / "book.txt")

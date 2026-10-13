@@ -1,6 +1,8 @@
 from pathlib import Path
 
-from src.cli import DEFAULT_CORPUS_PATH, build_parser, run
+import pytest
+
+from src.cli import DEFAULT_CORPUS_PATH, build_parser, main, run
 
 
 def test_cli_help_exposes_corpus_and_pipeline_options() -> None:
@@ -52,3 +54,39 @@ def test_cli_accepts_relative_corpus_path(tmp_path: Path, capsys) -> None:
         assert "start marker" in str(exc)
     else:
         raise AssertionError("Malformed corpus should be rejected")
+
+
+@pytest.mark.parametrize(
+    ("option", "value", "message"),
+    [
+        ("--chunk-size", "0", "chunk_size must be > 0"),
+        ("--overlap", "140", "overlap must be smaller than chunk_size"),
+        ("--top-k", "0", "k must be > 0"),
+        ("--min-score", "2", "min_score must be between 0 and 1"),
+    ],
+)
+def test_cli_reports_invalid_configuration_without_traceback(
+    option: str, value: str, message: str, capsys
+) -> None:
+    with pytest.raises(SystemExit) as exc_info:
+        main(["--question", "virtue fortune", option, value])
+
+    output = capsys.readouterr()
+    assert exc_info.value.code == 2
+    assert message in output.err
+    assert "Traceback" not in output.err
+    assert output.out == ""
+
+
+def test_cli_reports_missing_corpus_without_traceback(tmp_path: Path, capsys) -> None:
+    missing_path = tmp_path / "missing-book.txt"
+
+    with pytest.raises(SystemExit) as exc_info:
+        main(["--question", "virtue fortune", "--corpus-path", str(missing_path)])
+
+    output = capsys.readouterr()
+    assert exc_info.value.code == 2
+    assert "Book corpus file not found" in output.err
+    assert str(missing_path) in output.err
+    assert "Traceback" not in output.err
+    assert output.out == ""
