@@ -147,7 +147,15 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m src.evaluation
 ```
 
-Na macOS/Linux-u koristiti `.venv/bin/python`. Završna provera: **37 passed**; evaluacija **5/5 passed**. Sačuvani izlazi: [testovi](submission/tests.txt) i [evaluacija](submission/evaluation.txt). Evaluacioni slučajevi su u `data/evaluation.json` i proveravaju očekivano poglavlje i termine u citiranom odlomku, odnosno refusal bez referenci.
+Na macOS/Linux-u koristiti `.venv/bin/python`. Završna provera (2026-10-13): **48 passed**; evaluacija **5/5 passed**. Sačuvani izlazi: [testovi](submission/tests.txt) i [evaluacija](submission/evaluation.txt). Evaluacioni slučajevi su u `data/evaluation.json` i proveravaju očekivano poglavlje i termine u citiranom odlomku, odnosno refusal bez referenci.
+
+**Milanova dopuna testova (2026-10-13, commit `7d1755c`):** dodato je 11 automatizovanih testnih slučajeva uz pomoć Codex-a:
+
+- `tests/test_rag.py`: prihvatanje skora tačno na pragu i odbijanje ispod praga (2 slučaja); odbijanje praznog pitanja, whitespace pitanja i pitanja sa samo stop-rečima čak i kada je prag nula (3 slučaja).
+- `tests/test_cli.py`: jasna greška i izlazni kod 2 za neispravan chunk size, overlap, top-k i min-score (4 slučaja), kao i za nedostajući korpus (1 slučaj), bez Python traceback-a.
+- `tests/test_evaluation.py`: evaluacija ne prihvata pogrešno citirano poglavlje samo zato što se očekivani dokaz nalazi u drugim retrieved rezultatima (1 slučaj).
+
+Ukupan broj prolaznih testova povećan je sa 37 na 48. Leksički metod pretrage i pravila formiranja odgovora ostaju isti; dodatne provere ne uvode procenu značenja pitanja.
 
 **Ručna provera korisnika na Windows-u (2026-10-12):** `37 passed in 0.61s`. Prvi pokušaj testa imao je greške pri pravljenju `tmp_path`, jer Windows nije dozvolio pristup pytest podrazumevanom direktorijumu pod `%TEMP%`. Pokretanje sa jedinstvenim `--basetemp` unutar projekta zaobišlo je problem:
 
@@ -171,11 +179,9 @@ Rezultat: **9 passed**, [sačuvani izlaz](submission/starter-tests.txt). Opcije 
 | Član | Ime | Stvarni rad/pregled i konkretni fajlovi |
 |---|---|---|
 | A | Veki | Implementacija iz commitova `4036b4c`–`525d898`: Gutenberg loader i chunking (`src/corpus.py`, `src/chunking.py`), retrieval (`src/retrieval.py`), grounded odgovor i CLI (`src/rag.py`, `src/cli.py`), evaluacija (`src/evaluation.py`), testovi, chunking eksperiment i evidence dokumentacija. |
-| B | Kolega (ime dopuniti) | Detaljno testiranje projekta i popravljanje grešaka ukoliko se pronađu. Zabeležiti konkretne testove/popravljene greške nakon zajedničkog pregleda. |
+| B | Milan | Samostalno pokretanje pytest testova i `src.evaluation`, ručno isprobavanje dodatnih CLI pitanja i pregled ograničenja leksičkog skora. Dopuna 11 automatizovanih testnih slučajeva uz pomoć Codex-a u `tests/test_rag.py`, `tests/test_cli.py` i `tests/test_evaluation.py` (commit `7d1755c`); osvežavanje rezultata i dokumentacije za predaju. |
 
-**Demo lead:**
-
-**Napomena:** dopuniti ime kolege i dogovoreni demo lead pre predaje.
+**Demo lead:** Milan.
 
 ## Demo
 

@@ -1,6 +1,6 @@
 # Week 6 RAG — The Prince
 
-Završni dokazni materijal, CLI izlazi, testovi i scenario za demo: [docs/evidence.md](docs/evidence.md). Sekciju o doprinosu para i demo lead-u dopuniti pre predaje.
+Završni dokazni materijal, CLI izlazi, testovi i scenario za demo: [docs/evidence.md](docs/evidence.md). U istom dokumentu navedeni su doprinosi Vekija i Milana; demo lead je Milan.
 
 Lokalni, ekstraktivni RAG primer nad Gutenberg tekstom knjige *The Prince*. Retrieval koristi leksičku pokrivenost termina; odgovor je doslovni odlomak iz pronađenog chunk-a ili refusal ako nema rezultata/dovoljnog skora.
 

@@ -23,7 +23,9 @@ Konfiguracija: `chunk_size=140`, `overlap=30` karaktera, `top_k=3`, `min_score=0
 | `unsupported-world-cup` | Nepodrzano | `prince-section-001-chunk-083`, INTRODUCTION | 0.25 | Refusal, bez citata | Slab leksicki pogodak dolazi od reci “won” i “world”; odlomak ne govori o prvenstvu 1958. |
 | `unsupported-current-population` | Nepodrzano | `prince-section-001-chunk-059`, INTRODUCTION | 0.33 | Refusal, bez citata | Pominjanje Rima u istorijskom kontekstu ne daje trenutnu populaciju. |
 
-Rezultat komande `python -m src.evaluation`: **5/5 passed**. Rezultat testova `python -m pytest -q`: **37 passed**. Podrzana pitanja imaju eksplicitan dokaz u samom citatu; nepodrzani slucajevi odbijaju se ispod praga. Ovo je mali, rucno odabran skup, ne statisticka procena kvaliteta celog sistema.
+Rezultat komande `python -m src.evaluation`: **5/5 passed**. U ovoj fazi rezultat testova `python -m pytest -q` bio je **37 passed**. Podrzana pitanja imaju eksplicitan dokaz u samom citatu; nepodrzani slucajevi odbijaju se ispod praga. Ovo je mali, rucno odabran skup, ne statisticka procena kvaliteta celog sistema.
+
+Nakon Milanove dopune 11 automatizovanih testnih slucajeva, provera od 2026-10-13 daje **48 passed**; evaluacija ostaje **5/5 passed**. Dopuna obuhvata granicu praga, prazna pitanja, CLI greske i proveru da ocekivani dokaz mora biti u citiranom odlomku. [Opis doprinosa i zavrsni rezultati](evidence.md), [aktuelni izlaz testova](submission/tests.txt).
 
 ## Ogranicenja
 
